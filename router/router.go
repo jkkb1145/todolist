@@ -34,6 +34,7 @@ func InitRouter() *gin.Engine {
 			todo.GET("/getlist", ctl.GetList)
 			todo.GET("/showall", ctl.ShowAllList)
 			todo.POST("/updatelist", ctl.UpdateList)
+			todo.DELETE("/deletelist", ctl.DeleteList)
 		}
 	}
 	return r

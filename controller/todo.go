@@ -134,3 +134,29 @@ func (t *TodoController) UpdateList(c *gin.Context) {
 		"detail": nil,
 	})
 }
+
+func (t *TodoController) DeleteList(c *gin.Context) {
+	listID, err := strconv.Atoi(c.Query("list_id"))
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"code":   -1,
+			"msg":    "Error Occurred When Turn String Into Int",
+			"detail": err.Error(),
+		})
+		return
+	}
+	err = t.Todocontroller.DeleteList(listID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"code":   -1,
+			"msg":    "Error Occurred During The Execution Of The DeleteList function.",
+			"detail": err.Error(),
+		})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"code":   0,
+		"msg":    "The Program Ran Successfully Without Error.",
+		"detail": nil,
+	})
+}

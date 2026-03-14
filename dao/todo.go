@@ -103,3 +103,13 @@ func (t *TodoDAO) UpdateList(listID int, updatelist *model.UpdateList) error {
 
 	return nil
 }
+
+func (t *TodoDAO) DeleteList(listID int) error {
+	query := "DELETE FROM list WHERE ListID = ?"
+
+	_, err := global.Db.Exec(query, listID)
+	if err != nil {
+		return err
+	}
+	return nil
+}

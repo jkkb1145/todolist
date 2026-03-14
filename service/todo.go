@@ -30,3 +30,7 @@ func (t *TodoService) ShowAllList(userID int) (*[]model.CreatNewList, error) {
 func (t *TodoService) UpdateList(listID int, updatelist *model.UpdateList) error {
 	return t.Todoservice.UpdateList(listID, updatelist)
 }
+
+func (t *TodoService) DeleteList(listID int) error {
+	return t.Todoservice.DeleteList(listID)
+}
