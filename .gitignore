@@ -1,0 +1,34 @@
+# ---------- IDEA 全量配置忽略 ----------
+.idea/
+*.iml
+*.iws
+*.ipr
+modules.xml
+vcs.xml
+workspace.xml
+misc.xml
+compiler.xml
+inspectionProfiles/
+dictionaries/
+# 避免跨设备IDEA配置互相污染
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+# ---------- Go 项目专属忽略 ----------
+# 编译产物
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go 临时/依赖文件
+vendor/
+bin/
+.DS_Store
